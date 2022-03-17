@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <name>region1</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscPermissionBasedUI</identifier>
+<componentName>miscPermissionBasedUI</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscGetUserId</identifier>
+<componentName>miscGetUserId</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscNotification</identifier>
+<componentName>miscNotification</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscModal</identifier>
+<componentName>miscModal</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>region2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscSharedJavaScript</identifier>
+<componentName>miscSharedJavaScript</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscRestApiCall</identifier>
+<componentName>miscRestApiCall</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscDomQuery</identifier>
+<componentName>miscDomQuery</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>region3</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscStaticResource</identifier>
+<componentName>miscStaticResource</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscContentAsset</identifier>
+<componentName>miscContentAsset</componentName>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <identifier>miscMultipleTemplates</identifier>
+<componentName>miscMultipleTemplates</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>region4</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>Misc Techniques</masterLabel>
+    <template>
+        <name>flexipage:appHomeTemplateHeaderThreeColumns</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>
