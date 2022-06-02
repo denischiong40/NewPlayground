@@ -15,6 +15,12 @@ public class AccountManagerTest {
     System.assertEquals('Test account record', thisAcc.Name);
   }
 
+  @isTest
+  static void testInsertAccount() {
+    //method to test insertAccount
+    AccountHandler.insertAccount(15);
+  }
+
   // Helper method
   static Id createTestRecord() {
     // Create test record

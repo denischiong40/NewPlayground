@@ -1,4 +1,4 @@
-public with sharing class AccountHandler {
+public class AccountHandler {
   //method insertAccount nclude a parameter for the number of new accounts to be created
   /**
  * Add a public static method to the class:
@@ -11,7 +11,7 @@ Use a while loop to add N new Accounts to the list, where N is a value that is i
 Name: Acme Inc N
 AccountNumber: A000n
  */
-  //method insertAccount nclude a parameter for the number of new accounts to be created
+  //method insertAccount include a parameter for the number of new accounts to be created
   public static void insertAccount(Integer numAccounts) {
     List<Account> addAccounts = new List<Account>();
     Integer n = 1;
@@ -20,6 +20,11 @@ AccountNumber: A000n
       addAccounts.add(acmeIncN);
       n++;
     }
+    insert addAccounts;
   }
-  //method insertAccount nclude a parameter for the number of new accounts to be created
+
+  //method to test the insertAccount method
+  public static void testInsertAccount() {
+    insertAccount(15);
+  }
 }
