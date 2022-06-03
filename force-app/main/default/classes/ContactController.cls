@@ -8,4 +8,10 @@ public with sharing class ContactController {
   public static void getContactsException() {
     throw new AuraHandledException('Testing error');
   }
+
+  //method getSingleContact
+  @AuraEnabled(cacheable=true)
+  public static Contact getSingleContact(String id) {
+    return [SELECT FirstName, LastName, Email FROM Contact WHERE Id = :id];
+  }
 }
