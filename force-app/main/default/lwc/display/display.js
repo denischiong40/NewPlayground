@@ -4,17 +4,24 @@ export default class Display extends LightningElement {
   counter = 0;
   augmentor = 1;
 
-  handleChange(event) {
-    this.augmentor = event.target.value;
+  get options() {
+    return [
+      { label: '1', value: 1 },
+      { label: '2', value: 2 }
+    ];
+  }
+
+  handleAugmentorChange(event) {
+    this.augmentor = parseInt(event.target.value);
   }
 
   handleIncrement(event) {
     const operand = event.detail;
-    this.counter += operand;
+    this.counter += parseInt(operand);
   }
 
   handleDecrement(event) {
     const operand = event.detail;
-    this.counter -= operand;
+    this.counter -= parseInt(operand);
   }
 }

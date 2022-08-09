@@ -1,0 +1,35 @@
+<template>
+  <lightning-card title="Account Search" icon-name="action:manage_perm_sets">
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_1-of-2">
+        <lightning-input
+          class="slds-m-left_x-small"
+          label="Account Name"
+          name="accountName"
+          value={accountName}
+          onchange={handleAccountNameChange}
+        ></lightning-input>
+        <lightning-button
+          class="slds-m-left_x-small"
+          label="Search"
+          icon-name="utility:search"
+          onclick={handleSearch}
+        ></lightning-button>
+        <div style="height: 300px">
+          <lightning-datatable key-field="id" data={data} columns={columns} onrowaction={handleRowAction}>
+          </lightning-datatable>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-2">
+        <lightning-card>
+          <div class="slds-m-around_medium col-md-6">
+            <lightning-card title="Contacts" icon-name="action:manage_perm_sets">
+              <lightning-datatable key-field="id" data={dataContacts} columns={contactsColumns} hide-checkbox-column>
+              </lightning-datatable>
+            </lightning-card>
+          </div>
+        </lightning-card>
+      </div>
+    </div>
+  </lightning-card>
+</template>

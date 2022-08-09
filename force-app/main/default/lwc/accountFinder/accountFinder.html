@@ -1,0 +1,23 @@
+<template>
+  <lightning-card title="Account Finder" icon-name="action:manage_perm_sets">
+    <lightning-input
+      class="slds-m-left_x-small"
+      type="number"
+      label="Annual Revenue"
+      formatter="currency"
+      onchange={handleChange}
+      value={annualRevenue}
+    ></lightning-input>
+    <lightning-button
+      class="slds-m-left_x-small"
+      label="reset"
+      icon-name="utility:search"
+      onclick={reset}
+    ></lightning-button>
+    <template if:true={accounts.data}>
+      <template for:each={accounts.data} for:item="account">
+        <p key={account.Id}>{account.Name}</p>
+      </template></template
+    >
+  </lightning-card>
+</template>
