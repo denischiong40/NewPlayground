@@ -24,10 +24,10 @@ public with sharing class MaintenanceRequestHelper {
       newItemCase.Vehicle__c = c.Vehicle__c;
       newItemCase.Subject = String.isBlank(c.Subject) ? 'Routine Maintenance Request' : c.Subject;
       newItemCase.Date_Reported__c = Date.today();
-      //   newItemCase.ProductId = c.ProductId;
-      //   newItemCase.Product__c = c.Product__c;
-      //   newItemCase.parentID = c.Id;
-      //   newItemCase.Status = 'New';
+      newItemCase.ProductId = c.ProductId;
+      newItemCase.Product__c = c.Product__c;
+      newItemCase.parentID = c.Id;
+      newItemCase.Status = 'New';
 
       for (Equipment_Maintenance_Item__c equipMan : c.Equipment_Maintenance_Items__r) {
         avgAmountInt = Math.min(
