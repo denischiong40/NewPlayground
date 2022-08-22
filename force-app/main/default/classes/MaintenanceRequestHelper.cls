@@ -4,14 +4,16 @@ public with sharing class MaintenanceRequestHelper {
     Integer avgAmountInt = 10000;
 
     List<Equipment_Maintenance_Item__c> newEMI = new List<Equipment_Maintenance_Item__c>();
+
     List<case> listCase = [
-      SELECT id, Vehicle__c, Subject, ProductID, Product__c, (SELECT id FROM Equipment_Maintenance_Items__r)
+      SELECT id, Subject, Vehicle__c, ProductID, Product__c, (SELECT id FROM Equipment_Maintenance_Items__r)
       FROM case
       WHERE status = 'Closed' AND Type IN ('Repair', 'Routine Maintenance') AND ID IN :Trigger.new
     ];
+
     Map<id, Equipment_Maintenance_Item__c> equip = new Map<id, Equipment_Maintenance_Item__c>(
       [
-        SELECT ID, Equipment__c, Quantity__c, Equipment__r.id, Equipment__r.Maintenance_Cycle__c
+        SELECT ID, Quantity__c, Equipment__c, Equipment__r.id, Equipment__r.Maintenance_Cycle__c
         FROM Equipment_Maintenance_Item__c
       ]
     );
@@ -40,13 +42,13 @@ public with sharing class MaintenanceRequestHelper {
           )
         );
       }
-      Date dueDate = date.TODAY().adddays(avgAmountInt);
+      Date dueDate = Date.TODAY().adddays(avgAmountInt);
       newItemCase.Date_Due__c = dueDate;
       newCasesList.add(newItemCase);
     }
-    // if (newCasesList.size() > 0) {
-    //   Database.insert(newCasesList, false);
-    // }
+    if (newCasesList.size() > 0) {
+      Database.insert(newCasesList, false);
+    }
 
     for (Case c2 : newCasesList) {
       for (Equipment_Maintenance_Item__c emi2 : newEmi) {
