@@ -12,6 +12,8 @@ const BOAT_FIELDS = [LONGITUDE_FIELD, LATITUDE_FIELD];
 export default class BoatMap extends LightningElement {
   subscription = null;
   boatId;
+  error = undefined;
+  mapMarkers = [];
 
   @api
   get recordId() {
@@ -21,9 +23,6 @@ export default class BoatMap extends LightningElement {
     this.setAttribute('boatId', value);
     this.boatId = value;
   }
-
-  error = undefined;
-  mapMarkers = [];
 
   @wire(MessageContext)
   messageContext;
